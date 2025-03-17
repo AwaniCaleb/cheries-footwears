@@ -1,13 +1,756 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cherie's Footwears | Luxury Footwear Boutique</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+		body {
+			font-family: 'Poppins', sans-serif;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4 {
+			font-family: 'Playfair Display', serif;
+		}
+
+		.hero-section {
+			background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1920/1080');
+			background-size: cover;
+			background-position: center;
+		}
+
+		.collection-card:hover {
+			transform: translateY(-5px);
+			transition: transform 0.3s ease;
+		}
+
+		.product-card:hover {
+			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+			transition: box-shadow 0.3s ease;
+		}
+	</style>
+
+	<script type="module" src="/src/main.js" defer></script>
+</head>
+
+<body class="antialiased bg-gray-50">
+	<!-- Navigation -->
+	<nav class="bg-white shadow-md fixed w-full z-10">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex justify-between h-16">
+				<div class="flex items-center">
+					<div class="text-xl font-semibold text-gray-800">Cherie's Footwears</div>
+				</div>
+				<div class="hidden md:flex items-center space-x-8">
+					<a href="#about" class="text-gray-600 hover:text-gray-900">About</a>
+					<a href="#collections" class="text-gray-600 hover:text-gray-900">Collections</a>
+					<a href="#featured" class="text-gray-600 hover:text-gray-900">Featured</a>
+					<a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+				</div>
+				<div class="flex items-center md:hidden">
+					<button type="button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+						<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Hero Section -->
+	<section class="hero-section h-screen flex items-center justify-center text-white">
+		<div class="text-center px-4">
+			<h1 class="text-5xl md:text-6xl font-bold mb-4">Cherie's Footwears</h1>
+			<p class="text-xl md:text-2xl mb-8">Where Luxury Meets Comfort</p>
+			<a href="#collections"
+				class="bg-white text-gray-900 px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition duration-300">Explore
+				Collections</a>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section id="about" class="py-16 bg-white">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold text-gray-900">About Cherie's</h2>
+				<div class="w-24 h-1 bg-gray-800 mx-auto mt-4"></div>
+			</div>
+			<div class="md:flex items-center">
+				<div class="md:w-1/2 mb-8 md:mb-0">
+					<img src="/api/placeholder/600/400" alt="Cherish, Owner of Cherie's Footwears"
+						class="rounded-lg shadow-lg w-full h-auto">
+				</div>
+				<div class="md:w-1/2 md:pl-12">
+					<h3 class="text-2xl font-semibold mb-4">Cherish's Story</h3>
+					<p class="text-gray-600 mb-4">
+						Founded in 2018 by Cherish Williams, Cherie's Footwears was born from a lifelong passion for
+						exceptional footwear and an unwavering commitment to quality.
+					</p>
+					<p class="text-gray-600 mb-4">
+						With over 15 years of experience in luxury retail and a deep understanding of footwear
+						craftsmanship, Cherish created a boutique that bridges the gap between high fashion and everyday
+						comfort.
+					</p>
+					<p class="text-gray-600">
+						Each piece in our collection is personally curated by Cherish, ensuring that our clients receive
+						only the finest footwear made from premium materials and impeccable construction.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Collections Section -->
+	<section id="collections" class="py-16 bg-gray-50">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Collections</h2>
+				<div class="w-24 h-1 bg-gray-800 mx-auto mt-4"></div>
+				<p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+					Discover our carefully curated collections of luxury footwear for every occasion.
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<!-- Men's Collection -->
+				<div class="collection-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+					<img src="/api/placeholder/400/250" alt="Men's Footwear Collection"
+						class="w-full h-56 object-cover">
+					<div class="p-6">
+						<h3 class="text-xl font-semibold mb-2">Men's Footwear</h3>
+						<ul class="text-gray-600 mb-4">
+							<li>Corporate Shoes</li>
+							<li>Loafers</li>
+							<li>Sneakers</li>
+							<li>Slides</li>
+						</ul>
+						<a href="#" class="text-gray-900 font-medium hover:underline">Explore Collection →</a>
+					</div>
+				</div>
+
+				<!-- Women's Collection -->
+				<div class="collection-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+					<img src="/api/placeholder/400/250" alt="Women's Footwear Collection"
+						class="w-full h-56 object-cover">
+					<div class="p-6">
+						<h3 class="text-xl font-semibold mb-2">Women's Footwear</h3>
+						<ul class="text-gray-600 mb-4">
+							<li>Heels</li>
+							<li>Flats</li>
+							<li>Sneakers</li>
+							<li>Designer Brands</li>
+						</ul>
+						<a href="#" class="text-gray-900 font-medium hover:underline">Explore Collection →</a>
+					</div>
+				</div>
+
+				<!-- Designer Collection -->
+				<div class="collection-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+					<img src="/api/placeholder/400/250" alt="Designer Footwear Collection"
+						class="w-full h-56 object-cover">
+					<div class="p-6">
+						<h3 class="text-xl font-semibold mb-2">Designer Offerings</h3>
+						<ul class="text-gray-600 mb-4">
+							<li>Fendi</li>
+							<li>Versace</li>
+							<li>Gucci</li>
+							<li>And More...</li>
+						</ul>
+						<a href="#" class="text-gray-900 font-medium hover:underline">Explore Collection →</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Featured Products Section -->
+	<section id="featured" class="py-16 bg-white">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold text-gray-900">Featured Products</h2>
+				<div class="w-24 h-1 bg-gray-800 mx-auto mt-4"></div>
+				<p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+					Our bestselling pieces, handpicked for exceptional quality and style.
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+				<!-- Product 1 -->
+				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
+					<img src="/api/placeholder/300/300" alt="Versace Chain Loafers" class="w-full h-64 object-cover">
+					<div class="p-4">
+						<h3 class="font-semibold text-gray-900">Versace Chain Loafers</h3>
+						<p class="text-gray-600 mt-1">$890 - $1,100</p>
+					</div>
+				</div>
+
+				<!-- Product 2 -->
+				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
+					<img src="/api/placeholder/300/300" alt="Gucci Flora Pumps" class="w-full h-64 object-cover">
+					<div class="p-4">
+						<h3 class="font-semibold text-gray-900">Gucci Flora Pumps</h3>
+						<p class="text-gray-600 mt-1">$950 - $1,200</p>
+					</div>
+				</div>
+
+				<!-- Product 3 -->
+				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
+					<img src="/api/placeholder/300/300" alt="Fendi FF Sneakers" class="w-full h-64 object-cover">
+					<div class="p-4">
+						<h3 class="font-semibold text-gray-900">Fendi FF Sneakers</h3>
+						<p class="text-gray-600 mt-1">$780 - $950</p>
+					</div>
+				</div>
+
+				<!-- Product 4 -->
+				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
+					<img src="/api/placeholder/300/300" alt="Corporate Oxford Shoes" class="w-full h-64 object-cover">
+					<div class="p-4">
+						<h3 class="font-semibold text-gray-900">Corporate Oxford Shoes</h3>
+						<p class="text-gray-600 mt-1">$450 - $650</p>
+					</div>
+				</div>
+
+				<!-- Product 5 -->
+				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
+					<img src="/api/placeholder/300/300" alt="Designer Platform Heels" class="w-full h-64 object-cover">
+					<div class="p-4">
+						<h3 class="font-semibold text-gray-900">Designer Platform Heels</h3>
+						<p class="text-gray-600 mt-1">$580 - $750</p>
+					</div>
+				</div>
+
+				<!-- Product 6 -->
+				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
+					<img src="/api/placeholder/300/300" alt="Premium Leather Slides" class="w-full h-64 object-cover">
+					<div class="p-4">
+						<h3 class="font-semibold text-gray-900">Premium Leather Slides</h3>
+						<p class="text-gray-600 mt-1">$350 - $480</p>
+					</div>
+				</div>
+
+				<!-- Product 7 -->
+				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
+					<img src="/api/placeholder/300/300" alt="Luxury Ballet Flats" class="w-full h-64 object-cover">
+					<div class="p-4">
+						<h3 class="font-semibold text-gray-900">Luxury Ballet Flats</h3>
+						<p class="text-gray-600 mt-1">$420 - $550</p>
+					</div>
+				</div>
+
+				<!-- Product 8 -->
+				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
+					<img src="/api/placeholder/300/300" alt="Designer Running Sneakers"
+						class="w-full h-64 object-cover">
+					<div class="p-4">
+						<h3 class="font-semibold text-gray-900">Designer Running Sneakers</h3>
+						<p class="text-gray-600 mt-1">$680 - $820</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Gallery Section -->
+	<section id="gallery" class="py-16 bg-white">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Gallery</h2>
+				<div class="w-24 h-1 bg-gray-800 mx-auto mt-4"></div>
+				<p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+					Step into our world of luxury footwear. Explore our store atmosphere and exclusive collections.
+				</p>
+			</div>
+
+			<!-- Gallery Filter Buttons -->
+			<div class="flex flex-wrap justify-center mb-8">
+				<button
+					class="gallery-filter m-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-full text-gray-800 focus:outline-none transition duration-300 active"
+					data-filter="all">All</button>
+				<button
+					class="gallery-filter m-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-full text-gray-800 focus:outline-none transition duration-300"
+					data-filter="store">Store</button>
+				<button
+					class="gallery-filter m-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-full text-gray-800 focus:outline-none transition duration-300"
+					data-filter="events">Events</button>
+				<button
+					class="gallery-filter m-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-full text-gray-800 focus:outline-none transition duration-300"
+					data-filter="shoes">Shoes</button>
+				<button
+					class="gallery-filter m-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-full text-gray-800 focus:outline-none transition duration-300"
+					data-filter="accessories">Accessories</button>
+			</div>
+
+			<!-- Gallery Grid -->
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+				<!-- Gallery Item 1 -->
+				<div class="gallery-item store overflow-hidden rounded-lg shadow-sm cursor-pointer group">
+					<div class="relative">
+						<img src="/api/placeholder/600/600" alt="Boutique Interior"
+							class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+						<div
+							class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+							<span class="text-white text-lg font-medium">Boutique Interior</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Item 2 -->
+				<div class="gallery-item shoes overflow-hidden rounded-lg shadow-sm cursor-pointer group">
+					<div class="relative">
+						<img src="/api/placeholder/600/600" alt="Limited Edition Loafers"
+							class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+						<div
+							class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+							<span class="text-white text-lg font-medium">Limited Edition Loafers</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Item 3 -->
+				<div class="gallery-item events overflow-hidden rounded-lg shadow-sm cursor-pointer group">
+					<div class="relative">
+						<img src="/api/placeholder/600/600" alt="Fashion Show 2024"
+							class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+						<div
+							class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+							<span class="text-white text-lg font-medium">Fashion Show 2024</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Item 4 -->
+				<div class="gallery-item accessories overflow-hidden rounded-lg shadow-sm cursor-pointer group">
+					<div class="relative">
+						<img src="/api/placeholder/600/600" alt="Leather Care Kit"
+							class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+						<div
+							class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+							<span class="text-white text-lg font-medium">Leather Care Kit</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Item 5 -->
+				<div class="gallery-item store overflow-hidden rounded-lg shadow-sm cursor-pointer group">
+					<div class="relative">
+						<img src="/api/placeholder/600/600" alt="Display Window"
+							class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+						<div
+							class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+							<span class="text-white text-lg font-medium">Display Window</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Item 6 -->
+				<div class="gallery-item shoes overflow-hidden rounded-lg shadow-sm cursor-pointer group">
+					<div class="relative">
+						<img src="/api/placeholder/600/600" alt="Designer Heels Collection"
+							class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+						<div
+							class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+							<span class="text-white text-lg font-medium">Designer Heels Collection</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Item 7 -->
+				<div class="gallery-item events overflow-hidden rounded-lg shadow-sm cursor-pointer group">
+					<div class="relative">
+						<img src="/api/placeholder/600/600" alt="Customer Appreciation Night"
+							class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+						<div
+							class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+							<span class="text-white text-lg font-medium">Customer Appreciation Night</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Item 8 -->
+				<div class="gallery-item accessories overflow-hidden rounded-lg shadow-sm cursor-pointer group">
+					<div class="relative">
+						<img src="/api/placeholder/600/600" alt="Premium Shoe Accessories"
+							class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+						<div
+							class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+							<span class="text-white text-lg font-medium">Premium Shoe Accessories</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Item 9 -->
+				<div class="gallery-item shoes overflow-hidden rounded-lg shadow-sm cursor-pointer group">
+					<div class="relative">
+						<img src="/api/placeholder/600/600" alt="Exclusive Sneaker Collection"
+							class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500">
+						<div
+							class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition duration-300">
+							<span class="text-white text-lg font-medium">Exclusive Sneaker Collection</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Gallery View More Button -->
+			<div class="text-center mt-10">
+				<button
+					class="bg-gray-900 text-white px-8 py-3 rounded-md hover:bg-gray-800 transition duration-300">View
+					More</button>
+			</div>
+		</div>
+
+		<!-- Gallery Modal for Image Viewing -->
+		<!-- <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+	  <div class="relative max-w-4xl w-full mx-4">
+		<button id="modal-close" class="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 focus:outline-none">
+		  <i class="fas fa-times"></i> -->
+
+	</section>
+
+	<!-- FAQ Section -->
+	<section id="faq" class="py-16 bg-gray-50">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
+				<div class="w-24 h-1 bg-gray-800 mx-auto mt-4"></div>
+				<p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+					Find answers to our most commonly asked questions. If you don't see what you're looking for, feel
+					free
+					to contact us.
+				</p>
+			</div>
+
+			<div class="max-w-4xl mx-auto">
+				<!-- FAQ Items -->
+				<div class="space-y-6">
+					<!-- FAQ Item 1 -->
+					<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+						<button
+							class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
+							<span class="text-lg font-medium text-gray-900">Do you offer international shipping?</span>
+							<span class="faq-icon text-gray-500">
+								<i class="fas fa-plus"></i>
+							</span>
+						</button>
+						<div class="faq-content hidden px-6 pb-6">
+							<p class="text-gray-600">
+								Yes, we offer international shipping to over 50 countries worldwide. Shipping rates and
+								delivery times vary by location. Please allow 5-10 business days for international
+								deliveries, in addition to any customs clearance time.
+							</p>
+						</div>
+					</div>
+
+					<!-- FAQ Item 2 -->
+					<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+						<button
+							class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
+							<span class="text-lg font-medium text-gray-900">What is your return policy?</span>
+							<span class="faq-icon text-gray-500">
+								<i class="fas fa-plus"></i>
+							</span>
+						</button>
+						<div class="faq-content hidden px-6 pb-6">
+							<p class="text-gray-600">
+								We offer a 30-day return policy for unworn shoes in their original packaging. Returns
+								must
+								be initiated within 30 days of delivery. For hygiene reasons, we cannot accept returns
+								on
+								items that show signs of wear or have been worn outside.
+							</p>
+						</div>
+					</div>
+
+					<!-- FAQ Item 3 -->
+					<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+						<button
+							class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
+							<span class="text-lg font-medium text-gray-900">How can I determine my shoe size?</span>
+							<span class="faq-icon text-gray-500">
+								<i class="fas fa-plus"></i>
+							</span>
+						</button>
+						<div class="faq-content hidden px-6 pb-6">
+							<p class="text-gray-600">
+								We recommend measuring your feet at the end of the day when they are at their largest.
+								Stand
+								on a piece of paper and trace the outline of your foot, then measure the length from
+								heel to
+								toe. Compare this measurement with our size chart available on our website. If you're
+								between sizes, we recommend sizing up.
+							</p>
+						</div>
+					</div>
+
+					<!-- FAQ Item 4 -->
+					<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+						<button
+							class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
+							<span class="text-lg font-medium text-gray-900">Are your shoes authentic?</span>
+							<span class="faq-icon text-gray-500">
+								<i class="fas fa-plus"></i>
+							</span>
+						</button>
+						<div class="faq-content hidden px-6 pb-6">
+							<p class="text-gray-600">
+								Absolutely. We only source our footwear directly from authorized retailers and brand
+								manufacturers. Every pair of designer shoes comes with authentic packaging, dust bags,
+								and
+								authenticity cards where applicable. We stand by the authenticity of all our products.
+							</p>
+						</div>
+					</div>
+
+					<!-- FAQ Item 5 -->
+					<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+						<button
+							class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
+							<span class="text-lg font-medium text-gray-900">Do you offer shoe repairs or maintenance
+								services?</span>
+							<span class="faq-icon text-gray-500">
+								<i class="fas fa-plus"></i>
+							</span>
+						</button>
+						<div class="faq-content hidden px-6 pb-6">
+							<p class="text-gray-600">
+								Yes, we offer professional shoe repair and maintenance services for shoes purchased from
+								our
+								boutique. Services include sole replacement, heel repair, leather conditioning, and
+								professional cleaning. Please visit our store or contact us for a consultation and
+								pricing.
+							</p>
+						</div>
+					</div>
+
+					<!-- FAQ Item 6 -->
+					<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+						<button
+							class="faq-toggle w-full flex justify-between items-center p-6 text-left focus:outline-none">
+							<span class="text-lg font-medium text-gray-900">Can I place a special order for a style you
+								don't carry?</span>
+							<span class="faq-icon text-gray-500">
+								<i class="fas fa-plus"></i>
+							</span>
+						</button>
+						<div class="faq-content hidden px-6 pb-6">
+							<p class="text-gray-600">
+								We are happy to place special orders for our customers. Special orders typically take
+								2-4
+								weeks to arrive and require a 50% non-refundable deposit. Please contact us with the
+								specific style, size, and color you're looking for, and we'll check availability with
+								our
+								suppliers.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="contact" class="py-16 bg-gray-900 text-white">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold">Contact Us</h2>
+				<div class="w-24 h-1 bg-white mx-auto mt-4"></div>
+				<p class="mt-4 text-gray-300">We'd love to hear from you. Visit our store or reach out online.</p>
+			</div>
+
+			<div class="md:flex md:space-x-8">
+				<!-- Store Information -->
+				<div class="md:w-1/2 mb-8 md:mb-0">
+					<h3 class="text-xl font-semibold mb-6">Store Information</h3>
+
+					<div class="flex items-start mb-4">
+						<div class="text-gray-300 mr-4">
+							<i class="fas fa-map-marker-alt text-xl"></i>
+						</div>
+						<div>
+							<h4 class="font-medium">Address</h4>
+							<p class="text-gray-300">123 Fashion Avenue, Suite 456<br>New York, NY 10001</p>
+						</div>
+					</div>
+
+					<div class="flex items-start mb-4">
+						<div class="text-gray-300 mr-4">
+							<i class="fas fa-phone text-xl"></i>
+						</div>
+						<div>
+							<h4 class="font-medium">Phone</h4>
+							<p class="text-gray-300">(212) 555-7890</p>
+						</div>
+					</div>
+
+					<div class="flex items-start mb-4">
+						<div class="text-gray-300 mr-4">
+							<i class="fas fa-envelope text-xl"></i>
+						</div>
+						<div>
+							<h4 class="font-medium">Email</h4>
+							<p class="text-gray-300">info@cheriesfootwears.com</p>
+						</div>
+					</div>
+
+					<div class="flex items-start mb-4">
+						<div class="text-gray-300 mr-4">
+							<i class="fas fa-clock text-xl"></i>
+						</div>
+						<div>
+							<h4 class="font-medium">Hours</h4>
+							<p class="text-gray-300">
+								Monday - Friday: 10am - 7pm<br>
+								Saturday: 10am - 6pm<br>
+								Sunday: 12pm - 5pm
+							</p>
+						</div>
+					</div>
+
+					<!-- Social Media Links -->
+					<div class="mt-8">
+						<h4 class="font-medium mb-2">Follow Us</h4>
+						<div class="flex space-x-4">
+							<a href="#" class="text-white hover:text-gray-300 transition duration-300">
+								<i class="fab fa-instagram text-2xl"></i>
+							</a>
+							<a href="#" class="text-white hover:text-gray-300 transition duration-300">
+								<i class="fab fa-facebook text-2xl"></i>
+							</a>
+							<a href="#" class="text-white hover:text-gray-300 transition duration-300">
+								<i class="fab fa-pinterest text-2xl"></i>
+							</a>
+							<a href="#" class="text-white hover:text-gray-300 transition duration-300">
+								<i class="fab fa-twitter text-2xl"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Contact Form & Map -->
+				<div class="md:w-1/2">
+					<h3 class="text-xl font-semibold mb-6">Send Us a Message</h3>
+
+					<form>
+						<div class="mb-4">
+							<input type="text" placeholder="Your Name"
+								class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600 text-white">
+						</div>
+
+						<div class="mb-4">
+							<input type="email" placeholder="Your Email"
+								class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600 text-white">
+						</div>
+
+						<div class="mb-4">
+							<input type="text" placeholder="Subject"
+								class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600 text-white">
+						</div>
+
+						<div class="mb-4">
+							<textarea placeholder="Your Message" rows="4"
+								class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600 text-white"></textarea>
+						</div>
+
+						<button type="submit"
+							class="bg-white text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition duration-300">Send
+							Message</button>
+					</form>
+
+					<!-- Google Map -->
+					<div class="mt-8 h-64 bg-gray-800 rounded-md overflow-hidden">
+						<!-- Placeholder for Google Maps embed -->
+						<div class="w-full h-full flex items-center justify-center">
+							<p class="text-gray-400">Google Maps will be embedded here</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="bg-gray-800 text-gray-300">
+		<!-- Main Footer Content -->
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+			<div class="md:flex md:justify-between">
+				<!-- Brand Column -->
+				<div class="mb-8 md:mb-0 md:w-1/3">
+					<h3 class="text-xl font-semibold text-white mb-4">Cherie's Footwears</h3>
+					<p class="mb-4 text-gray-400">
+						Where luxury meets comfort. Discover our premium collection of designer footwear for every
+						occasion.
+					</p>
+					<p class="text-sm">
+						© 2025 Cherie's Footwears. All rights reserved.
+					</p>
+				</div>
+
+				<!-- Quick Links -->
+				<div class="mb-8 md:mb-0 md:w-1/4">
+					<h4 class="text-lg font-medium text-white mb-4">Quick Links</h4>
+					<ul class="space-y-2">
+						<li><a href="#" class="hover:text-white transition duration-300">Home</a></li>
+						<li><a href="#about" class="hover:text-white transition duration-300">About Us</a></li>
+						<li><a href="#collections" class="hover:text-white transition duration-300">Collections</a></li>
+						<li><a href="#featured" class="hover:text-white transition duration-300">Featured Products</a>
+						</li>
+						<li><a href="#contact" class="hover:text-white transition duration-300">Contact</a></li>
+					</ul>
+				</div>
+
+				<!-- Collections Links -->
+				<div class="mb-8 md:mb-0 md:w-1/4">
+					<h4 class="text-lg font-medium text-white mb-4">Collections</h4>
+					<ul class="space-y-2">
+						<li><a href="#" class="hover:text-white transition duration-300">Men's Footwear</a></li>
+						<li><a href="#" class="hover:text-white transition duration-300">Women's Footwear</a></li>
+						<li><a href="#" class="hover:text-white transition duration-300">Designer Brands</a></li>
+						<li><a href="#" class="hover:text-white transition duration-300">New Arrivals</a></li>
+						<li><a href="#" class="hover:text-white transition duration-300">Sale Items</a></li>
+					</ul>
+				</div>
+
+				<!-- Newsletter -->
+				<div class="md:w-1/4">
+					<h4 class="text-lg font-medium text-white mb-4">Newsletter</h4>
+					<p class="mb-4 text-gray-400">Subscribe to receive updates on new collections and exclusive offers.
+					</p>
+					<form class="flex">
+						<input type="email" placeholder="Your email"
+							class="px-4 py-2 w-full bg-gray-700 text-white rounded-l focus:outline-none focus:ring-2 focus:ring-gray-600">
+						<button type="submit"
+							class="bg-white text-gray-900 px-4 rounded-r hover:bg-gray-200 transition duration-300">
+							<i class="fas fa-paper-plane"></i>
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bottom Footer -->
+		<div class="bg-gray-900 py-4">
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+				<div class="text-sm text-gray-400 mb-2 md:mb-0">
+					Designed with <i class="fas fa-heart text-red-500"></i> by Cherish Williams
+				</div>
+				<div class="text-sm text-gray-400">
+					<a href="#" class="hover:text-white mr-4 transition duration-300">Privacy Policy</a>
+					<a href="#" class="hover:text-white mr-4 transition duration-300">Terms of Service</a>
+					<a href="#" class="hover:text-white transition duration-300">FAQ</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+
 </html>
