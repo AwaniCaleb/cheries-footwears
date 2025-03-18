@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Add animation on scroll
 	setupScrollAnimations();
+
+	// FAQ accordion functionality
+	setupFaqAccordions();
 });
 
 /**
@@ -53,33 +56,170 @@ function setupMobileMenu() {
 }
 
 /**
- * Contact form handling
+ * Contact Form with Formspree Integration
  */
 function setupContactForm() {
 	const contactForm = document.querySelector('#contact form');
 
 	if (contactForm) {
-		contactForm.addEventListener('submit', function (event) {
+		// Add Formspree endpoint
+		contactForm.setAttribute('action', 'https://formspree.io/f/xanenlnl');
+		contactForm.setAttribute('method', 'POST');
+
+		// Form submission handler
+		contactForm.addEventListener('submit', async function (event) {
 			event.preventDefault();
 
 			// Get form data
 			const formData = new FormData(contactForm);
-			const formObject = Object.fromEntries(formData.entries());
 
-			// Validate form
-			const errors = validateForm(formObject);
+			// Validate form before submission
+			const errors = validateContactForm(formData);
 
 			if (Object.keys(errors).length === 0) {
-				// Simulate form submission
-				showAlert('Thank you for your message! We will get back to you soon.', 'success');
-				contactForm.reset();
-			} else {
-				// Show error messages
-				showAlert('Please check the form for errors.', 'error');
+				// Show loading state
+				const submitButton = contactForm.querySelector('button[type="submit"]');
+				const originalButtonText = submitButton.innerHTML;
+				submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+				submitButton.disabled = true;
 
-				// You can add logic to display specific error messages next to each field
+				try {
+					// Send form data to Formspree
+					const response = await fetch(contactForm.action, {
+						method: 'POST',
+						body: formData,
+						headers: {
+							'Accept': 'application/json'
+						}
+					});
+
+					const result = await response.json();
+
+					if (response.ok) {
+						// Success message
+						showAlert('Thank you for your message! We will get back to you soon.', 'success');
+						contactForm.reset();
+					} else {
+						// Error from Formspree
+						showAlert('Oops! There was a problem submitting your form. ' + (result.error || ''), 'error');
+					}
+				} catch (error) {
+					// Network or other error
+					showAlert('Oops! There was a problem submitting your form. Please try again later.', 'error');
+				} finally {
+					// Reset button state
+					submitButton.innerHTML = originalButtonText;
+					submitButton.disabled = false;
+				}
+			} else {
+				// Display validation errors
+				showFormErrors(contactForm, errors);
+				showAlert('Please check the form for errors.', 'error');
 			}
 		});
+	}
+}
+
+/**
+ * FAQ Accordion Functionality
+ */
+function setupFaqAccordions() {
+	const faqToggles = document.querySelectorAll('.faq-toggle');
+
+	faqToggles.forEach(toggle => {
+		toggle.addEventListener('click', function () {
+			// Get the content element that follows this toggle button
+			const content = this.nextElementSibling;
+			const icon = this.querySelector('.faq-icon i');
+
+			// Toggle the visibility of the content
+			content.classList.toggle('hidden');
+
+			// Toggle the icon between plus and minus
+			if (content.classList.contains('hidden')) {
+				icon.classList.remove('fa-minus');
+				icon.classList.add('fa-plus');
+			} else {
+				icon.classList.remove('fa-plus');
+				icon.classList.add('fa-minus');
+			}
+
+			// Close other open FAQ items (optional - for accordion behavior)
+			faqToggles.forEach(otherToggle => {
+				if (otherToggle !== toggle) {
+					const otherContent = otherToggle.nextElementSibling;
+					const otherIcon = otherToggle.querySelector('.faq-icon i');
+
+					if (!otherContent.classList.contains('hidden')) {
+						otherContent.classList.add('hidden');
+						otherIcon.classList.remove('fa-minus');
+						otherIcon.classList.add('fa-plus');
+					}
+				}
+			});
+		});
+	});
+}
+
+/**
+ * Validate contact form fields
+ */
+function validateContactForm(formData) {
+	const errors = {};
+
+	// Check name
+	const name = formData.get('name');
+	if (!name || name.trim() === '') {
+		errors.name = 'Name is required';
+	}
+
+	// Check email
+	const email = formData.get('email');
+	if (!email || !isValidEmail(email)) {
+		errors.email = 'Valid email is required';
+	}
+
+	// Check subject
+	const subject = formData.get('subject');
+	if (!subject || subject.trim() === '') {
+		errors.subject = 'Subject is required';
+	}
+
+	// Check message
+	const message = formData.get('message');
+	if (!message || message.trim() === '') {
+		errors.message = 'Message is required';
+	}
+
+	return errors;
+}
+
+/**
+ * Display form errors under each input
+ */
+function showFormErrors(form, errors) {
+	// First, remove any existing error messages
+	const existingErrors = form.querySelectorAll('.error-message');
+	existingErrors.forEach(el => el.remove());
+
+	// Remove error classes from inputs
+	form.querySelectorAll('input, textarea').forEach(input => {
+		input.classList.remove('border-red-500');
+	});
+
+	// Add new error messages
+	for (const field in errors) {
+		const input = form.querySelector(`[name="${field}"]`);
+		if (input) {
+			// Add error class to input
+			input.classList.add('border-red-500');
+
+			// Create and append error message
+			const errorDiv = document.createElement('div');
+			errorDiv.className = 'error-message text-red-500 text-sm mt-1';
+			errorDiv.textContent = errors[field];
+			input.parentNode.appendChild(errorDiv);
+		}
 	}
 }
 
@@ -142,23 +282,23 @@ function isValidEmail(email) {
 function showAlert(message, type = 'info') {
 	const alertDiv = document.createElement('div');
 	alertDiv.className = `fixed top-4 right-4 p-4 rounded-md shadow-md z-50 ${type === 'success' ? 'bg-green-500' :
-		type === 'error' ? 'bg-red-500' :
-			'bg-blue-500'
+			type === 'error' ? 'bg-red-500' :
+				'bg-blue-500'
 		} text-white`;
 
 	alertDiv.innerHTML = `
-    <div class="flex items-center">
-      <div class="flex-shrink-0 mr-2">
-        ${type === 'success' ? '<i class="fas fa-check-circle"></i>' :
+	  <div class="flex items-center">
+		<div class="flex-shrink-0 mr-2">
+		  ${type === 'success' ? '<i class="fas fa-check-circle"></i>' :
 			type === 'error' ? '<i class="fas fa-exclamation-circle"></i>' :
 				'<i class="fas fa-info-circle"></i>'}
-      </div>
-      <div>${message}</div>
-      <button class="ml-4 text-white hover:text-gray-200 focus:outline-none" aria-label="Close">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-  `;
+		</div>
+		<div>${message}</div>
+		<button class="ml-4 text-white hover:text-gray-200 focus:outline-none" aria-label="Close">
+		  <i class="fas fa-times"></i>
+		</button>
+	  </div>
+	`;
 
 	document.body.appendChild(alertDiv);
 
