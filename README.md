@@ -2,6 +2,8 @@
 
 A luxury footwear boutique website for Cherie's Footwears, showcasing premium and designer shoe collections.
 
+![Preview](https://github.com/awanicaleb/cheries-footwears/blob/main/public/assets/screenshots/1.png)
+
 ## Features
 
 - Responsive single-page design

@@ -5,6 +5,29 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Cherie's Footwears | Luxury Footwear Boutique</title>
+
+	<meta name="description"
+		content="Discover Cherie's Footwears, a luxury footwear boutique showcasing premium and designer shoe collections.">
+	<meta name="keywords" content="Cherie's Footwears, luxury footwear, boutique, designer shoes, premium shoes">
+	<link rel="canonical" href="https://cheriesfootwears.vercel.app/">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:title" content="Cherie's Footwears | Luxury Footwear Boutique">
+	<meta property="og:description" content="Discover Cherie's Footwears, a luxury footwear boutique showcasing premium and designer shoe collections.">
+	<meta property="og:url" content="https://cheriesfootwears.vercel.app/">
+	<meta property="og:type" content="website">
+	<!-- <meta property="og:image" content="/assets/screenshots/1.jpg"> -->
+	<meta property="og:image" content="https://cheriesfootwears.vercel.app/assets/screenshots/1.jpg">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Cherie's Footwears | Luxury Footwear Boutique">
+	<meta name="twitter:description"
+		content="Discover Cherie's Footwears, a luxury footwear boutique showcasing premium and designer shoe collections.">
+	<!-- <meta name="twitter:image" content="/assets/screenshots/1.jpg"> -->
+	<meta name="twitter:image" content="https://cheriesfootwears.vercel.app/assets/screenshots/1.jpg">
+
+
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<style>
@@ -27,7 +50,10 @@
 			font-family: 'Poppins', sans-serif;
 		}
 
-		h1, h2, h3, h4 {
+		h1,
+		h2,
+		h3,
+		h4 {
 			font-family: 'Playfair Display', serif;
 		}
 
@@ -38,13 +64,17 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for transparency */
-			z-index: 1; /* Place the overlay above the background image but below the text */
+			background-color: rgba(0, 0, 0, 0.5);
+			/* Adjust the alpha value for transparency */
+			z-index: 1;
+			/* Place the overlay above the background image but below the text */
 		}
 
-		.hero-section > div {
-			position: relative; /* Ensure the text stays above the overlay */
-			z-index: 2; /* Place the text above the overlay */
+		.hero-section>div {
+			position: relative;
+			/* Ensure the text stays above the overlay */
+			z-index: 2;
+			/* Place the text above the overlay */
 		}
 
 		.hero-section {
@@ -99,7 +129,8 @@
 	</nav>
 
 	<!-- Hero Section -->
-	<section class="hero-section h-screen flex items-center justify-center text-white bg-cover bg-center relative" style="background-image: url('/assets/images/1.jpg')">
+	<section class="hero-section h-screen flex items-center justify-center text-white bg-cover bg-center relative"
+		style="background-image: url('/assets/images/1.jpg')">
 		<div class="text-center px-4 z-10">
 			<h1 class="text-4xl md:text-8xl font-bold mb-4 ephesis-regular">Cherie's Footwears</h1>
 			<p class="text-xl md:text-2xl mb-8">Where Luxury Meets Comfort</p>
@@ -118,7 +149,7 @@
 			</div>
 			<div class="md:flex items-center">
 				<div class="md:w-1/2 mb-8 md:mb-0">
-					<img src="/public/assets/images/owner/4.jpg" alt="Cherish, Owner of Cherie's Footwears"
+					<img src="/assets/images/owner/4.jpg" alt="Cherish, Owner of Cherie's Footwears"
 						class="rounded-lg shadow-lg mx-auto h-auto max-h-96">
 				</div>
 				<div class="md:w-1/2 md:pl-12">
@@ -155,7 +186,7 @@
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 				<!-- Men's Collection -->
 				<div class="collection-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
-					<img src="/public/assets/images/collections/men-footwear-collection.jpg" alt="Men's Footwear Collection"
+					<img src="/assets/images/collections/men-footwear-collection.jpg" alt="Men's Footwear Collection"
 						class="w-full h-56 object-cover">
 					<div class="p-6">
 						<h3 class="text-xl font-semibold mb-2">Men's Footwear</h3>
@@ -170,8 +201,8 @@
 
 				<!-- Women's Collection -->
 				<div class="collection-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
-					<img src="/public/assets/images/collections/women-footwear-collection.jpg" alt="Women's Footwear Collection"
-						class="w-full h-56 object-cover">
+					<img src="/assets/images/collections/women-footwear-collection.jpg"
+						alt="Women's Footwear Collection" class="w-full h-56 object-cover">
 					<div class="p-6">
 						<h3 class="text-xl font-semibold mb-2">Women's Footwear</h3>
 						<ul class="text-gray-600 mb-4">
@@ -185,7 +216,7 @@
 
 				<!-- Designer Collection -->
 				<div class="collection-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
-					<img src="/public/assets/images/collections/designer-offerings-1.jpg" alt="Designer Footwear Collection"
+					<img src="/assets/images/collections/designer-offerings-1.jpg" alt="Designer Footwear Collection"
 						class="w-full h-56 object-cover">
 					<div class="p-6">
 						<h3 class="text-xl font-semibold mb-2">Designer Offerings</h3>
@@ -215,7 +246,8 @@
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 				<!-- Product 1 -->
 				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
-					<img src="/public/assets/images/featured/versace-chain-loafers.jpg" alt="Versace Chain Loafers" class="w-full h-64 object-cover">
+					<img src="/assets/images/featured/versace-chain-loafers.jpg" alt="Versace Chain Loafers"
+						class="w-full h-64 object-cover">
 					<div class="p-4">
 						<h3 class="font-semibold text-gray-900">Versace Chain Loafers</h3>
 						<p class="text-gray-600 mt-1">₦890 - ₦1,100</p>
@@ -224,7 +256,8 @@
 
 				<!-- Product 2 -->
 				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
-					<img src="/public/assets/images/featured/gucci-flora-pumps.jpg" alt="Gucci Flora Pumps" class="w-full h-64 object-cover">
+					<img src="/assets/images/featured/gucci-flora-pumps.jpg" alt="Gucci Flora Pumps"
+						class="w-full h-64 object-cover">
 					<div class="p-4">
 						<h3 class="font-semibold text-gray-900">Gucci Flora Pumps</h3>
 						<p class="text-gray-600 mt-1">₦950 - ₦1,200</p>
@@ -233,7 +266,8 @@
 
 				<!-- Product 3 -->
 				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
-					<img src="/public/assets/images/featured/fendi-ff-sneakers.jpg" alt="Fendi FF Sneakers" class="w-full h-64 object-cover">
+					<img src="/assets/images/featured/fendi-ff-sneakers.jpg" alt="Fendi FF Sneakers"
+						class="w-full h-64 object-cover">
 					<div class="p-4">
 						<h3 class="font-semibold text-gray-900">Fendi FF Sneakers</h3>
 						<p class="text-gray-600 mt-1">₦780 - ₦950</p>
@@ -242,7 +276,8 @@
 
 				<!-- Product 4 -->
 				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
-					<img src="/public/assets/images/featured/corporate-oxford-shoes.jpg" alt="Corporate Oxford Shoes" class="w-full h-64 object-cover">
+					<img src="/assets/images/featured/corporate-oxford-shoes.jpg" alt="Corporate Oxford Shoes"
+						class="w-full h-64 object-cover">
 					<div class="p-4">
 						<h3 class="font-semibold text-gray-900">Corporate Oxford Shoes</h3>
 						<p class="text-gray-600 mt-1">₦450 - ₦650</p>
@@ -251,7 +286,8 @@
 
 				<!-- Product 5 -->
 				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
-					<img src="/public/assets/images/featured/designer-platform-heels.jpg" alt="Designer Platform Heels" class="w-full h-64 object-cover">
+					<img src="/assets/images/featured/designer-platform-heels.jpg" alt="Designer Platform Heels"
+						class="w-full h-64 object-cover">
 					<div class="p-4">
 						<h3 class="font-semibold text-gray-900">Designer Platform Heels</h3>
 						<p class="text-gray-600 mt-1">₦580 - ₦750</p>
@@ -260,7 +296,8 @@
 
 				<!-- Product 6 -->
 				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
-					<img src="/public/assets/images/featured/premium-leather-slides.jpg" alt="Premium Leather Slides" class="w-full h-64 object-cover">
+					<img src="/assets/images/featured/premium-leather-slides.jpg" alt="Premium Leather Slides"
+						class="w-full h-64 object-cover">
 					<div class="p-4">
 						<h3 class="font-semibold text-gray-900">Premium Leather Slides</h3>
 						<p class="text-gray-600 mt-1">₦350 - ₦480</p>
@@ -269,7 +306,8 @@
 
 				<!-- Product 7 -->
 				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
-					<img src="/public/assets/images/featured/luxury-ballet-flats.jpg" alt="Luxury Ballet Flats" class="w-full h-64 object-cover">
+					<img src="/assets/images/featured/luxury-ballet-flats.jpg" alt="Luxury Ballet Flats"
+						class="w-full h-64 object-cover">
 					<div class="p-4">
 						<h3 class="font-semibold text-gray-900">Luxury Ballet Flats</h3>
 						<p class="text-gray-600 mt-1">₦420 - ₦550</p>
@@ -278,7 +316,7 @@
 
 				<!-- Product 8 -->
 				<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition duration-300">
-					<img src="/public/assets/images/featured/designer-running-sneakers.jpg" alt="Designer Running Sneakers"
+					<img src="/assets/images/featured/designer-running-sneakers.jpg" alt="Designer Running Sneakers"
 						class="w-full h-64 object-cover">
 					<div class="p-4">
 						<h3 class="font-semibold text-gray-900">Designer Running Sneakers</h3>
@@ -473,7 +511,8 @@
 						</button>
 						<div class="faq-content hidden px-6 pb-6">
 							<p class="text-gray-600">
-								No, we do not offer international shipping at this time. We currently only ship within Nigeria.
+								No, we do not offer international shipping at this time. We currently only ship within
+								Nigeria.
 							</p>
 						</div>
 					</div>
@@ -550,7 +589,9 @@
 						</button>
 						<div class="faq-content hidden px-6 pb-6">
 							<p class="text-gray-600">
-								No, we do not offer professional shoe repair and maintenance services at this time. We do have a list of recommended cobblers and shoe repair shops that we can refer you to. Please contact us for more information.
+								No, we do not offer professional shoe repair and maintenance services at this time. We
+								do have a list of recommended cobblers and shoe repair shops that we can refer you to.
+								Please contact us for more information.
 							</p>
 						</div>
 					</div>
@@ -567,7 +608,9 @@
 						</button>
 						<div class="faq-content hidden px-6 pb-6">
 							<p class="text-gray-600">
-								No, we do not currently accept special orders. We only offer the items that are available in our store. Our inventory is updated regularly with new styles and collections.
+								No, we do not currently accept special orders. We only offer the items that are
+								available in our store. Our inventory is updated regularly with new styles and
+								collections.
 							</p>
 						</div>
 					</div>
@@ -625,7 +668,8 @@
 						</div>
 						<div>
 							<h4 class="font-medium">Email</h4>
-							<p class="text-gray-300"><a href="mailto:cherieoverseer@gmail.com">cherieoverseer@gmail.com</a></p>
+							<p class="text-gray-300"><a
+									href="mailto:cherieoverseer@gmail.com">cherieoverseer@gmail.com</a></p>
 						</div>
 					</div>
 
@@ -771,8 +815,12 @@
 		<div class="bg-gray-900 py-4">
 			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
 				<div class="mb-2 md:mb-0">
-					<p class="text-sm text-gray-400">Made by <a href="https://github.com/AwaniCaleb/" target="_blank" rel="noopener noreferrer" class="underline">Awani Caleb</a> with <i class="fas fa-heart text-red-500"></i> and <i class="fas fa-coffee text-yellow-500"></i></p>
-					<p class="text-sm text-gray-400">Some images on this site are sourced from <a href="https://pinterest.com/" class="underline">Pinterest</a>. All rights to these images remain with their respective creators
+					<p class="text-sm text-gray-400">Made by <a href="https://github.com/AwaniCaleb/" target="_blank"
+							rel="noopener noreferrer" class="underline">Awani Caleb</a> with <i
+							class="fas fa-heart text-red-500"></i> and <i class="fas fa-coffee text-yellow-500"></i></p>
+					<p class="text-sm text-gray-400">Some images on this site are sourced from <a
+							href="https://pinterest.com/" class="underline">Pinterest</a>. All rights to these images
+						remain with their respective creators
 					</p>
 				</div>
 			</div>
