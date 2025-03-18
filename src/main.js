@@ -282,8 +282,8 @@ function isValidEmail(email) {
 function showAlert(message, type = 'info') {
 	const alertDiv = document.createElement('div');
 	alertDiv.className = `fixed top-4 right-4 p-4 rounded-md shadow-md z-50 ${type === 'success' ? 'bg-green-500' :
-			type === 'error' ? 'bg-red-500' :
-				'bg-blue-500'
+		type === 'error' ? 'bg-red-500' :
+			'bg-blue-500'
 		} text-white`;
 
 	alertDiv.innerHTML = `
@@ -359,13 +359,7 @@ function initializeMap() {
 		// This is a placeholder - in a real implementation, you would use the Google Maps API
 		mapContainer.innerHTML = `
       <div class="w-full h-full bg-gray-800 flex items-center justify-center">
-        <p class="text-gray-400">
-          <!-- In a real implementation, replace this with actual Google Maps embed code -->
-          <!-- Example: -->
-          <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!..." width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
-          <i class="fas fa-map-marker-alt text-2xl mr-2"></i> 
-          Google Maps integration would go here
-        </p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3975.7893156126665!2d6.983825074979969!3d4.806199995169243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwNDgnMjIuMyJOIDbCsDU5JzExLjAiRQ!5e0!3m2!1sen!2sng!4v1742278128537!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     `;
 
